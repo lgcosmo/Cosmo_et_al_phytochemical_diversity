@@ -8,7 +8,7 @@ library(nlme)
 library(here)
 
 dados<-read.table(here("data", "Cosmo_et_al_fulldataset.txt"), header=TRUE) #Importing dataset
-dados$logitherb<-dados$herbivory/(1-dados$herbivory) #Creating logit variable of herbivory
+dados$logitherb<-log(dados$herbivory/(1-dados$herbivory)) #Creating logit variable of herbivory
 
 #--------------------------------------------------------------------#
 #-Using the package rptR to calculate ICC for all response variables-#
